@@ -98,17 +98,6 @@ export default function Position() {
     )
   }
 
-  const performanceData = [
-    { date: "Jan 15", value: 42889.3 },
-    { date: "Jan 20", value: 43156.78 },
-    { date: "Jan 25", value: 43445.23 },
-    { date: "Jan 30", value: 43789.45 },
-    { date: "Feb 05", value: 44123.67 },
-    { date: "Feb 10", value: 44567.89 },
-    { date: "Feb 15", value: 44890.12 },
-    { date: "Feb 20", value: 45230.5 },
-  ]
-
   const recentActivity = [
     {
       action: "Yield Earned",

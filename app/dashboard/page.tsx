@@ -479,7 +479,7 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4">
-                    {positions.map((position, index) => (
+                    {positions.map((position) => (
                       <Link key={position.id} href={`/position/${position.id}`}>
                         <div
                           className={cn(

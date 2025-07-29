@@ -16,6 +16,7 @@ export default function Component() {
     setIsLoaded(true)
 
     const handleScroll = () => {
+      console.log("scrollY", scrollY)
       setScrollY(window.scrollY)
     }
 

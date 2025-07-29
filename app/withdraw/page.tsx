@@ -569,7 +569,7 @@ export default function Withdraw() {
                     <div className="text-sm">
                       <div className="font-medium text-green-600 dark:text-green-400 mb-1">Yield Earned</div>
                       <div className={cn("text-xs", isDarkMode ? "text-green-300" : "text-green-600")}>
-                        You've earned {selectedPositionData?.earned} from this position. This will be included in your
+                        You&apos;ve earned {selectedPositionData?.earned} from this position. This will be included in your
                         withdrawal.
                       </div>
                     </div>
