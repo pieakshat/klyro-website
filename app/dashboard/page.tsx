@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import {
-  Header,
+  GlobalHeader,
   ActionButtons,
   PortfolioOverview,
   PositionsList,
@@ -12,10 +13,10 @@ import {
 } from "@/components/dashboard"
 
 export default function Dashboard() {
+  noStore()
+
   const [isLoaded, setIsLoaded] = useState(false)
   const [showBalance, setShowBalance] = useState(true)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
   const { isDarkMode } = useTheme()
 
   useEffect(() => {
@@ -151,13 +152,8 @@ export default function Dashboard() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      {/* Header */}
-      <Header
-        selectedNetwork={selectedNetwork}
-        setSelectedNetwork={setSelectedNetwork}
-        isPopoverOpen={isPopoverOpen}
-        setIsPopoverOpen={setIsPopoverOpen}
-      />
+      {/* Global Header */}
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">

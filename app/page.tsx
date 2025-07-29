@@ -20,9 +20,8 @@ export default function Component() {
 
   useEffect(() => {
     setIsLoaded(true)
-
+    console.log(scrollY);
     const handleScroll = () => {
-      console.log("scrollY", scrollY)
       setScrollY(window.scrollY)
     }
 

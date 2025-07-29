@@ -17,7 +17,9 @@ export default function Header() {
         >
             <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center">
-                    {/* Logo placeholder */}
+                    <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+                        Klyro
+                    </h1>
                 </div>
 
                 <div className="flex items-center space-x-4">

@@ -1,4 +1,4 @@
-export { default as PositionHeader } from "./PositionHeader"
+
 export { default as PositionInfo } from "./PositionInfo"
 export { default as PositionStats } from "./PositionStats"
 export { default as PerformanceChart } from "./PerformanceChart"

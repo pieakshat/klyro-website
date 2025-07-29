@@ -1,11 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import { useParams } from "next/navigation"
 import {
-  PositionHeader,
   PositionInfo,
   PositionStats,
   PerformanceChart,
@@ -14,13 +14,15 @@ import {
   positionData,
   recentActivityData,
 } from "@/components/position"
+import { GlobalHeader } from "@/components/dashboard"
 
 export default function Position() {
+  noStore()
+
   const params = useParams()
   const positionId = params.id as string
 
   const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
   const { isDarkMode } = useTheme()
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function Position() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      <PositionHeader selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">

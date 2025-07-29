@@ -44,7 +44,7 @@ export default function FeaturesSection({ isLoaded, isDarkMode }: FeaturesSectio
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
+                    {features.map((feature) => (
                         <div key={feature.title} className="text-center p-6">
                             <div
                                 className={cn(

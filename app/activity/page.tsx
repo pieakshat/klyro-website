@@ -1,20 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import {
-  ActivityHeader,
   ActivityInfo,
   ActivityFilters,
   ActivityList,
   activitiesData,
 } from "@/components/activity"
+import { GlobalHeader } from "@/components/dashboard"
 import type { Activity } from "@/components/activity"
 
 export default function Activity() {
+  noStore()
+
   const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
   const [searchQuery, setSearchQuery] = useState("")
   const [filterBy, setFilterBy] = useState("all")
   const { isDarkMode } = useTheme()
@@ -43,7 +45,7 @@ export default function Activity() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      <ActivityHeader selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">

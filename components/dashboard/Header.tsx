@@ -7,19 +7,7 @@ import Link from "next/link"
 import { useTheme } from "@/providers/themeProvider"
 import { ConnectWalletButton } from "@/components/connectWallet"
 
-interface HeaderProps {
-    selectedNetwork: string
-    setSelectedNetwork: (network: string) => void
-    isPopoverOpen: boolean
-    setIsPopoverOpen: (open: boolean) => void
-}
-
-export default function Header({
-    selectedNetwork,
-    setSelectedNetwork,
-    isPopoverOpen,
-    setIsPopoverOpen,
-}: HeaderProps) {
+export default function GlobalHeader() {
     const { isDarkMode, toggleDarkMode } = useTheme()
 
     return (
@@ -45,17 +33,19 @@ export default function Header({
                                 <ArrowLeft className="w-4 h-4" />
                             </Button>
                         </Link>
-                        <Button
-                            variant="ghost"
-                            className={cn(
-                                "transition-colors duration-200 px-6 py-3 h-auto rounded-xl",
-                                isDarkMode
-                                    ? "text-gray-400 hover:text-white hover:bg-gray-800 border border-gray-700"
-                                    : "text-gray-600 hover:text-black hover:bg-gray-100 border border-gray-200",
-                            )}
-                        >
-                            <span className="text-sm font-medium">Dashboard</span>
-                        </Button>
+                        <Link href="/dashboard">
+                            <Button
+                                variant="ghost"
+                                className={cn(
+                                    "transition-colors duration-200 px-6 py-3 h-auto rounded-xl",
+                                    isDarkMode
+                                        ? "text-gray-400 hover:text-white hover:bg-gray-800 border border-gray-700"
+                                        : "text-gray-600 hover:text-black hover:bg-gray-100 border border-gray-200",
+                                )}
+                            >
+                                <span className="text-sm font-medium">Dashboard</span>
+                            </Button>
+                        </Link>
                         <Link href="/markets">
                             <Button
                                 variant="ghost"

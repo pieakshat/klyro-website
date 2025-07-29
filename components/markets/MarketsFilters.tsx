@@ -20,9 +20,7 @@ interface MarketsFiltersProps {
 export default function MarketsFilters({
     searchQuery,
     setSearchQuery,
-    filterBy,
     setFilterBy,
-    sortBy,
     setSortBy,
     isLoaded,
 }: MarketsFiltersProps) {

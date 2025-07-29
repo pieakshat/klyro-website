@@ -1,22 +1,23 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import {
-  MarketsHeader,
   MarketsFilters,
   MarketsList,
   marketsData,
-  Market,
 } from "@/components/markets"
+import { GlobalHeader } from "@/components/dashboard"
 
 export default function Markets() {
+  noStore()
+
   const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
   const [searchQuery, setSearchQuery] = useState("")
-  const [sortBy, setSortBy] = useState("apy")
   const [filterBy, setFilterBy] = useState("all")
+  const [sortBy, setSortBy] = useState("apy")
   const { isDarkMode } = useTheme()
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export default function Markets() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      <MarketsHeader selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">

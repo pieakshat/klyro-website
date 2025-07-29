@@ -1,19 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import {
-  WithdrawHeader,
   WithdrawInfo,
   WithdrawForm,
   WithdrawalSummary,
   positionsData,
 } from "@/components/withdraw"
+import { GlobalHeader } from "@/components/dashboard"
 
 export default function Withdraw() {
+  noStore()
+
   const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
   const [selectedPosition, setSelectedPosition] = useState("morpho-usdc")
   const [amount, setAmount] = useState("")
   const { isDarkMode } = useTheme()
@@ -24,8 +26,6 @@ export default function Withdraw() {
 
   const positions = positionsData
 
-  const selectedPositionData = positions.find((position) => position.id === selectedPosition)
-
   return (
     <div
       className={cn(
@@ -34,7 +34,7 @@ export default function Withdraw() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      <WithdrawHeader selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-8">

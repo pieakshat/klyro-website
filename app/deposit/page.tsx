@@ -1,20 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { unstable_noStore as noStore } from 'next/cache'
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/providers/themeProvider"
 import {
-  DepositHeader,
   DepositInfo,
   DepositForm,
   TransactionSummary,
   assetsData,
   protocolsData,
 } from "@/components/deposit"
+import { GlobalHeader } from "@/components/dashboard"
 
 export default function Deposit() {
+  noStore()
+
   const [isLoaded, setIsLoaded] = useState(false)
-  const [selectedNetwork, setSelectedNetwork] = useState("Ethereum")
   const [selectedAsset, setSelectedAsset] = useState("USDC")
   const [amount, setAmount] = useState("")
   const [selectedProtocol, setSelectedProtocol] = useState("Auto-Optimize")
@@ -27,9 +29,6 @@ export default function Deposit() {
   const assets = assetsData
   const protocols = protocolsData
 
-  const selectedAssetData = assets.find((asset) => asset.symbol === selectedAsset)
-  const selectedProtocolData = protocols.find((protocol) => protocol.name === selectedProtocol)
-
   return (
     <div
       className={cn(
@@ -38,7 +37,7 @@ export default function Deposit() {
       )}
       style={{ backgroundColor: isDarkMode ? "#0d0c1d" : undefined }}
     >
-      <DepositHeader selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+      <GlobalHeader />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-8">
