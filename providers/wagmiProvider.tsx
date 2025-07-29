@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { mainnet, sepolia, polygon, optimism, arbitrum, mantle } from "wagmi/chains";
+import { mainnet, sepolia, base, baseSepolia, mantleTestnet, mantle } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitProvider, lightTheme, darkTheme } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const config = createConfig({
-    chains: [mainnet, sepolia, polygon, optimism, arbitrum, mantle],
+    chains: [mainnet, base, mantle, sepolia, baseSepolia, mantleTestnet],
     transports: {
         [mainnet.id]: http(),
+        [base.id]: http(),
         [sepolia.id]: http(),
-        [polygon.id]: http(),
-        [optimism.id]: http(),
-        [arbitrum.id]: http(),
+        [baseSepolia.id]: http(),
+        [mantleTestnet.id]: http(),
         [mantle.id]: http(),
     },
     ssr: true,

@@ -62,7 +62,7 @@ export default function Deposit() {
             selectedAsset={selectedAsset}
             amount={amount}
             selectedProtocol={selectedProtocol}
-            assets={assets}
+            // assets={assets}
             protocols={protocols}
             isLoaded={isLoaded}
           />

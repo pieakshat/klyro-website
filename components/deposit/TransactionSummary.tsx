@@ -19,14 +19,11 @@ export default function TransactionSummary({
     selectedAsset,
     amount,
     selectedProtocol,
-    assets,
     protocols,
     isLoaded,
-}: TransactionSummaryProps) {
+}: Omit<TransactionSummaryProps, 'assets'>) {
     const { isDarkMode } = useTheme()
 
-    const selectedAssetData = assets.find((asset) => asset.symbol === selectedAsset)
-    console.log(selectedAssetData);
     const selectedProtocolData = protocols.find((protocol) => protocol.name === selectedProtocol)
 
     return (

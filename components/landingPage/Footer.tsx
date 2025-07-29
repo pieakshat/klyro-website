@@ -28,6 +28,12 @@ export default function Footer({ isDarkMode }: FooterProps) {
                         {/* Telegram */}
                         <a
                             href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open("https://t.me/pieakshat", "_blank", "noopener,noreferrer");
+                            }}
                             className={cn(
                                 "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
                                 "hover:scale-110",
@@ -43,7 +49,13 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
                         {/* Twitter */}
                         <a
-                            href="#"
+                            href="https://x.com/Klyro_fi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.open("https://x.com/Klyro_fi", "_blank", "noopener,noreferrer");
+                            }}
                             className={cn(
                                 "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300",
                                 "hover:scale-110",

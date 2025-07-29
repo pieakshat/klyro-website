@@ -17,7 +17,10 @@ export default function Header() {
         >
             <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
                 <div className="flex items-center">
-                    <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+                    <h1 className={cn(
+                        "text-xl font-light transition-colors duration-300",
+                        isDarkMode ? "text-white" : "text-black"
+                    )}>
                         Klyro
                     </h1>
                 </div>
