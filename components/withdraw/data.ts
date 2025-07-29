@@ -1,0 +1,58 @@
+import { Position } from "./types"
+
+export const positionsData: Position[] = [
+    {
+        id: "morpho-usdc",
+        protocol: "MORPHO",
+        asset: "USDC",
+        balance: "45,230.50",
+        apy: "7.67%",
+        earned: "+$2,341.20",
+        value: "$45,230.50",
+    },
+    {
+        id: "seamless-eth",
+        protocol: "SEAMLESS",
+        asset: "ETH",
+        balance: "13.75",
+        apy: "9.13%",
+        earned: "+$1,892.45",
+        value: "$32,100.75",
+    },
+    {
+        id: "euler-dai",
+        protocol: "EULER",
+        asset: "DAI",
+        balance: "21,762.27",
+        apy: "6.39%",
+        earned: "+$1,234.56",
+        value: "$21,762.27",
+    },
+    {
+        id: "compound-wbtc",
+        protocol: "COMPOUND",
+        asset: "WBTC",
+        balance: "0.438",
+        apy: "4.82%",
+        earned: "+$756.30",
+        value: "$18,950.40",
+    },
+    {
+        id: "moonwell-usdc",
+        protocol: "MOONWELL",
+        asset: "USDC",
+        balance: "15,670.85",
+        apy: "8.24%",
+        earned: "+$1,145.67",
+        value: "$15,670.85",
+    },
+    {
+        id: "venus-bnb",
+        protocol: "VENUS",
+        asset: "BNB",
+        balance: "32.45",
+        apy: "5.67%",
+        earned: "+$432.10",
+        value: "$9,876.25",
+    },
+] 
